@@ -1,0 +1,133 @@
+:root {
+  --primary-color: #356aff;
+  --bg-color: #fff;
+  --text-color: #000;
+  --light-text-color: #a5a5a5;
+  --body-bg-color: #f5f5f5;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+}
+.container {
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bg-color);
+}
+.container .heading {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.container .upload {
+  display: block;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px dashed #a5a5a5;
+}
+.container .upload:hover {
+  border: 2px dashed var(--primary-color);
+}
+.container .upload ion-icon {
+  font-size: 50px;
+  color: var(--light-text-color);
+}
+.container .upload:hover ion-icon {
+  color: var(--primary-color);
+}
+.container .upload .main {
+  font-size: 20px;
+  font-weight: 600;
+}
+.container .upload .sub {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--light-text-color);
+}
+.container .upload .types {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--light-text-color);
+}
+.container .line {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-text-color);
+  opacity: 0.5;
+  margin: 50px 0;
+}
+.container .line p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  padding: 0 10px;
+}
+.container .record {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  height: 60px;
+  padding: 20px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+.container .record ion-icon {
+  font-size: 30px;
+}
+.container .record img {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+.container .record.recording img {
+  display: block;
+}
+.container .record.recording ion-icon {
+  display: none;
+}
+.container .result {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid var(--light-text-color);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.container .result p {
+  display: inline;
+  margin-left: 3px;
+  color: var(--light-text-color);
+}
