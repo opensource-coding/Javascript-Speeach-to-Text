@@ -18,17 +18,14 @@
   <body>
     <div class="container">
       <p class="heading">Speech to Text</p>
-      <label for="file" class="upload">
-        <ion-icon name="cloud-upload-outline"></ion-icon>
-        <p class="main">Upload audio from computer</p>
-        <p class="sub">or drag and drop here</p>
-        <p class="types">(.mp4 , .m4a, .mp3, .webm)</p>
-        <input type="file" id="file" hidden />
-      </label>
-      <div class="line">
-        <p>or</p>
+      <div class="options">
+        <div class="anguage">
+          <p>Language</p>
+          <select name="input-language" id="language"></select>
+        </div>
       </div>
-      <button class="record">
+      <div class="line"></div>
+      <button class="btn record">
         <div class="icon">
           <ion-icon name="mic-outline"></ion-icon>
           <img src="bars.svg" alt="" />
@@ -43,8 +40,17 @@
       >
         <p class="interim"></p>
       </div>
+      <button class="btn clear">
+        <ion-icon name="trash-outline"></ion-icon>
+        <p>Clear</p>
+      </button>
+      <button class="btn download" disabled>
+        <ion-icon name="cloud-download-outline"></ion-icon>
+        <p>Download</p>
+      </button>
     </div>
 
+    <script src="languages.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

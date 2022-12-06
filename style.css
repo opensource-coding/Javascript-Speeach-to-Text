@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 :root {
   --primary-color: #356aff;
   --bg-color: #fff;
@@ -20,7 +22,7 @@ body {
   color: var(--text-color);
 }
 .container {
-  width: 800px;
+  width: 400px;
   padding: 20px;
   border-radius: 10px;
   background-color: var(--bg-color);
@@ -28,44 +30,23 @@ body {
 .container .heading {
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: 10px;
+}
+.container .options select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light-text-color);
+  border-radius: 5px;
+  outline: none;
+}
+.container .options div:not(:last-child) select {
   margin-bottom: 20px;
 }
-.container .upload {
-  display: block;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 10px;
-  border: 2px dashed #a5a5a5;
-}
-.container .upload:hover {
-  border: 2px dashed var(--primary-color);
-}
-.container .upload ion-icon {
-  font-size: 50px;
-  color: var(--light-text-color);
-}
-.container .upload:hover ion-icon {
-  color: var(--primary-color);
-}
-.container .upload .main {
-  font-size: 20px;
+
+.container .options p {
+  font-size: 14px;
   font-weight: 600;
-}
-.container .upload .sub {
-  font-size: 15px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  color: var(--light-text-color);
-}
-.container .upload .types {
-  font-size: 16px;
-  font-weight: 500;
+  margin-bottom: 5px;
   color: var(--light-text-color);
 }
 .container .line {
@@ -74,17 +55,9 @@ body {
   height: 1px;
   background-color: var(--light-text-color);
   opacity: 0.5;
-  margin: 50px 0;
+  margin: 30px 0;
 }
-.container .line p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--bg-color);
-  padding: 0 10px;
-}
-.container .record {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,8 +75,12 @@ body {
   color: #fff;
   background-color: var(--primary-color);
 }
-.container .record ion-icon {
+.btn ion-icon {
   font-size: 30px;
+}
+.btn:disabled {
+  background-color: var(--light-text-color);
+  cursor: not-allowed;
 }
 .container .record img {
   width: 30px;
@@ -118,12 +95,13 @@ body {
 }
 .container .result {
   width: 100%;
-  height: 200px;
+  min-height: 200px;
   padding: 10px;
   border: 1px solid var(--light-text-color);
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
+  margin-bottom: 20px;
   color: var(--text-color);
 }
 .container .result p {
