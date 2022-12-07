@@ -109,3 +109,7 @@ body {
   margin-left: 3px;
   color: var(--light-text-color);
 }
+.buttons {
+  display: flex;
+  gap: 20px;
+}

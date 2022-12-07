@@ -25,9 +25,8 @@ function speechToText() {
     recognition = new SpeechRecognition();
     recognition.lang = inputLanguage.value;
     recognition.interimResults = true;
-    2;
     recordBtn.classList.add("recording");
-    recordBtn.querySelector("p").innerHTML = "Recording...";
+    recordBtn.querySelector("p").innerHTML = "Listening...";
     recognition.start();
     recognition.onresult = (event) => {
       const speechResult = event.results[0][0].transcript;
@@ -48,16 +47,12 @@ function speechToText() {
       downloadBtn.disabled = false;
     };
     recognition.onspeechend = () => {
-      recordBtn.querySelector("p").innerHTML = "Start Recording";
-      recordBtn.classList.remove("recording");
       speechToText();
     };
     recognition.onerror = (event) => {
-      recording = false;
-      recordBtn.querySelector("p").innerHTML = "Start Recording";
-      recordBtn.classList.remove("recording");
+      stopRecording();
       if (event.error === "no-speech") {
-        alert("No speech was detected. Try again.");
+        alert("No speech was detected. Stopping...");
       } else if (event.error === "audio-capture") {
         alert(
           "No microphone was found. Ensure that a microphone is installed."
@@ -65,7 +60,7 @@ function speechToText() {
       } else if (event.error === "not-allowed") {
         alert("Permission to use microphone is blocked.");
       } else if (event.error === "aborted") {
-        alert("Recording Stopped.");
+        alert("Listening Stopped.");
       } else {
         alert("Error occurred in recognition: " + event.error);
       }
@@ -82,12 +77,16 @@ recordBtn.addEventListener("click", () => {
     speechToText();
     recording = true;
   } else {
-    recognition.stop();
-    recordBtn.querySelector("p").innerHTML = "Start Recording";
-    recordBtn.classList.remove("recording");
-    recording = false;
+    stopRecording();
   }
 });
+
+function stopRecording() {
+  recognition.stop();
+  recordBtn.querySelector("p").innerHTML = "Start Listening";
+  recordBtn.classList.remove("recording");
+  recording = false;
+}
 
 function download() {
   const text = result.innerText;
